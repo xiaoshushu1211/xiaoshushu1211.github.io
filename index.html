@@ -1,168 +1,636 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>以鼠之见</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="以鼠之见"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="以鼠之见"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="今天是我们余生的第一天"><meta property="og:type" content="blog"><meta property="og:title" content="以鼠之见"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="以鼠之见"><meta property="og:description" content="今天是我们余生的第一天"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="僵尸大树"><meta property="article:tag" content="游戏设计 游戏 设计 僵尸大树"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"以鼠之见","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"僵尸大树"},"publisher":{"@type":"Organization","name":"以鼠之见","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"今天是我们余生的第一天"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
 
-          const id = '#' + CSS.escape(location.hash.substring(1));
-          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
-          if (!$tabMenu) {
-            return;
-          }
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(id);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="以鼠之见" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-26T06:48:46.000Z" title="2023/3/26 14:48:46">2023-03-26</time>发表</span><span class="level-item"><time dateTime="2023-03-26T17:45:17.777Z" title="2023/3/27 01:45:17">2023-03-27</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span><span class="level-item">1 小时读完 (大约7021个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/">让我们尽情的后悔:ACG中的时间旅行</a></p><div class="content"><p>几年前论坛还很流行的时候，有人发了一篇帖子，题目是《我要回到1997年了，真是舍不得你们》，帖子大致的内容是说：自己从十年前穿越而来，马上就要回到过去了，问大家有没有什么话想带给过去的自己。<br>这样一篇明显是网友开玩笑的帖子，居然有几万条回复，点击量好几百万。很多人都表示，原本就是想个凑热闹回个帖，最后却纷纷泪流满面。为什么这样的帖子会引起大家的共鸣？理由很简单，我们的生活中总是充满这样那样的遗憾，这些遗憾刻骨铭心却又无法弥补。而改变过去，则是大家所能想到的最直接有效的办法。<br>虽然愿望是美好的，不过真正的时间旅行究竟是什么样子的，显然并没有人经历过。对于今天的我们来说，时间旅行只不过是一种科幻题材，影迷们毫不费力就可以说出若干关于时间旅行的电影，《回到未来》、《终结者》、《星际穿越》等等。动漫迷们对此更是信手拈来，几十年前的《哆啦A梦》中就有无数时间旅行的小故事。而游戏作为叙事艺术的载体，自然也有不少作品涉及时间旅行这一概念。<br>关于时间旅行，有许多枯燥且晦涩的理论，学者们目前并没有达成普遍共识，理论界也一直在争论不休。而在时间旅行的相关理论中，经典物理学和量子物理学则分为两个不同阵营，渐行渐远。</p>
-<p>为了更简单的讲清楚这些深奥复杂的理论，我试着用一个不严谨但是够通俗的小故事来说明这些理论：<br>老刘年轻的时候喜欢女神翠花，两人从小青梅竹马。有一天老刘鼓起勇气准备向翠花表白。在去找翠花的路上，老刘被飞来的一颗石头打中了脑袋，昏迷不醒进了医院。隔壁病房老王趁机向翠花表了白，结婚生了个娃娃叫小王。老刘醒来后跟看护他的护士如花日久生情，最后结婚生了个娃娃叫小刘。小刘长大后发明了时间机器回到过去，来到了老刘被石头砸中的那一天……</p>
-<hr>
-<h2 id="经典物理学和外祖母悖论："><a href="#经典物理学和外祖母悖论：" class="headerlink" title="经典物理学和外祖母悖论："></a>经典物理学和外祖母悖论：</h2><p>经典物理学理论认为，有因必有果，过去所有的一切作为因，会在未来产生一个恒定的结果。因此，我们的未来是确定的，不变的。在小故事中，飞来的石头导致了老刘跟如花结婚生下小刘。反过来说，如果不是石头砸中老刘，那么老刘就不会认识如花，自然也就不会生下小刘。这听起来很自然，对不对？<br>所以现在小刘回到了过去，如果他阻止了那颗飞来的石头会怎么样？按照上面的说法，小刘就不会出生了，小刘不存在，也就不会有人发明时间机器，自然不会有人来阻止“飞来横石”，于是小刘就又会出现……这就是时间旅行理论中著名的“外祖母悖论”（外祖母悖论：如果一个人回到过去杀死自己的外祖母，这个人是不是存在？）。</p>
-<img src="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/4.jpg" class="" title="[外祖母悖论]">
 
-<hr>
-<h2 id="宿命论"><a href="#宿命论" class="headerlink" title="宿命论"></a>宿命论</h2><p>经典物理学的时光旅行宣告失败了？不，他们想出了一套理论解决这个问题——宿命论。<br>宿命论认为，所有发生的事情都是必然会发生的，谁也改变不了命运。回到小故事中，小刘回到过去这个行为本身就是历史的必然，而且小刘回到过去不能阻止“飞来横石”，甚至可能 “飞来横石”这个灾难就是因为小刘回到过去才产生的，总之所有事情的发生都是固定且不可避免的，一切都是命中注定。</p>
-<img src="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/201611191819558152d.gif" class="">
 
-<p>许多人的启蒙漫画《哆啦A梦》中就有很多这样的桥段。<br>《吹牛的祖先》中大雄听说自己的祖先很喜欢吹牛，于是用时光机把这位祖先带到现代，老实本分的祖先看到了20世纪的情形吓得半死，回到过去之后到处向别人诉说，被别人笑话，他也因此被称作吹牛大王。《祖先加油》中小夫战国时代的祖先救了大人物，成为家老，光耀门楣。大雄不服，用时光机回到过去，帮助自己的祖先救了这位大人物，没想到反而因此让小夫的祖先得了功劳，而大雄的祖先拿了22世纪的先进道具，却仍然在做猎人的营生。需要说明的是，《哆啦A梦》中关于时间旅行的理论有很多种，并不是每一个故事都是讲宿命论。</p>
-<p>说起这种“衔尾蛇”式的循环，有人可能会想到《恐怖游轮》，不过其实《恐怖游轮》的剧情仅仅是一种形式上的循环。影片中游轮上的的女主角扮演了所有的角色，却没有服从任何时间逻辑，因此《恐怖游轮》是超自然题材的作品，而非时间旅行题材。<br>《前目的地》可以算是电影中宿命论的代表作。《前目的地》改编自1959年的科幻小说《你们这些回魂尸》，以下是网友总结的故事简介，大家感受一下：<br>“1962年，一个女婴被抛弃在医院。1983年，21岁的女孩在公园与男人一见钟情，一年后产下一个女婴，随后男人与孩子一起失踪。伤心欲绝的女人做了变性手术，整日酗酒。1988年，他路过一个小酒馆，酒馆的老板把他招募进一支神秘的部队，进行时光旅行。他被送回1983年，在公园里和一个年轻的女孩一见钟情，一年后生下一个女孩。就在这时，他接到新的任务，为了不让女孩做未婚妈妈，他旅行到1962年，将婴儿遗弃在一个医院。 他接到的新任务，是返回1988年，去一个小酒馆假扮老板，伺机招募人手。”<br>这个电影里，主人公的命运早已注定，每一次时间旅行看起来都是为了改变什么，但是最终什么都没有改变，时间旅行这个行为的本身就是主人公命运的一部分。</p>
-<p>要说游戏的话，《时空幻境》勉强算得上是宿命论的作品。<br>《时空幻境》是一款以动作、解谜为主要玩法的游戏，游戏中玩家可以自由操纵时间的前进后退，并且需要利用这种能力解决游戏中的各种难题。游戏是从第二章开始的，到游戏结束的时候玩家才会明白，第一章既是故事的结局又是故事的开始。主角提姆为了拯救公主踏上征程，最后救到公主的一刻时间会开始倒流，看着逆转的动画时，玩家们惊奇的发现，公主一直在逃离的不是穿着盔甲的野蛮人骑士，而是孜孜不倦追寻公主的主人公提姆。<br>为什么要说《时空幻境》勉强算宿命论呢，因为《时空幻境》作为一款解谜为主的游戏，作品展现出的剧情并不清晰，只给出了一些隐晦的场景、片段、图片让玩家自行解读。而游戏多个结局的意义，游戏本身也没有给出足够明确的说明。</p>
-<p>与动漫、电影不同，在游戏领域宿命论其实并不太受欢迎。究其原因，是因为宿命论与游戏设计理念有矛盾。想想看，玩家们辛辛苦苦回到过去，打怪解谜收集要素，福尔摩斯狄仁杰柯南轮流附体，怀揣拯救世界的小小梦想，摸爬滚打十几个小时，玩到最后作者告诉大家：对不起，你们所做的一切都是徒劳的，这个世界不会因为你而有丝毫改变。玩家们会不会很愤怒？因此在一些宿命论题材的游戏中，或多或少的都会有一些突破宿命的情节。<br>《龙骑士4》是一款1994年出品的SLG呃……SLG&#x2F;Hgame。如果不是它Hgame的卑微出身，《龙骑士4》是可以比肩《火焰之纹章》《曹操传》的神作。这款游戏在战斗方面稍显逊色，而剧情方面则是神来之笔。介于游戏比较古老，大部分玩家都不会找来体验，我就稍微剧透一下吧。<br>很老套的勇者挑战魔王故事，男主角在游戏前期披荆斩棘且战且H，游戏中期收编了一名戴着头盔的优秀队友埃德，这位中年大叔加入之后，不论是战斗实力还是H情节，都抢尽了主角的风头。一路所向披靡的队伍到了魔王战的时候，突然被团灭了……所有队友全部死亡，只剩下主角孤身一人被魔王囚禁了起来。10年之后，主角被一个神秘女人救了出来，两人穿越了时空来到10年前。为了拯救自己和伙伴们，主角情急之下戴上了头盔，自称埃德。对，那位优秀的中年大叔就是主角自己。玩家的视角这时也从年轻主角视角变成了中年大叔视角。<br>最后，神秘女人的身份被揭示，她其实是魔王派来的杀手玛尔蕾妮。她拯救中年主角的目的就是为了混入10年前年轻主角的队伍，让年轻主角再次陷入全员团灭的无尽轮回。但是玛尔蕾妮爱上了中年大叔主角，在游戏的第二个轮回里，她选择了为爱而战，打到了魔王。魔王倒下了，穿越回来的中年大叔主角却因为违背了时空法则而必须消失。于是中年主角微笑着对年轻时的自己以及所有同伴们一一告别，并且说出了一段虐心对话。<br>玛尔蕾妮：“拜托…即使是谎言也好…请告诉我…喜欢我吧。”<br>埃德：“我喜欢你…玛尔蕾妮。”<br>玛尔蕾妮：“啊啊…你在说谎…但我仍然高兴得发抖。”<br>最后，中年主角在流着泪的众人面前渐渐消失。</p>
-<hr>
-<h2 id="量子物理学和蝴蝶效应"><a href="#量子物理学和蝴蝶效应" class="headerlink" title="量子物理学和蝴蝶效应"></a>量子物理学和蝴蝶效应</h2><p>宿命论一定程度上解决了外祖母悖论的问题，但是它作为一种科幻理论却不能满足我们改变世界的幻想。而量子物理学的理论则大胆满足了我们改变世界的美好愿望。<br>量子物理学认为，未来的一切都不是确定不变的，而是以概率的形式存在。我们这里不说“薛定谔的猫”，回到开头的小故事，一颗“飞来横石”引发了一系列后果，量子物理学认为，这些后果在发生之前都仅仅只是“可能性”。老刘有可能晕了也可能没晕；有可能去了医院也可能仍然去找翠花；翠花有可能被老王约走了也可能没被约走……等等等等。只有当事情发生之后才是确定的，在没有发生的时候，一切都只是“可能性”。而这一切“可能性”都是由一颗“飞来横石”引起的。这就是“蝴蝶效应”（蝴蝶效应：“一只南美洲亚马逊河流域热带雨林中的蝴蝶，偶尔扇动几下翅膀，可以在两周以后引起美国得克萨斯州的一场龙卷风。”通俗的说就是一件小事可能会引起巨大的连锁反应。）<br>到这里，有些读者要晕了，蝴蝶效应和时间旅行有什么关系？与前文中“宿命论”的命中注定观点对比我们可以看到，在量子物理学理论中，小刘回到过去的行为并非是徒劳无功的，他的行动有可能对小刘所属的未来产生影响。但是未来是怎么改变的，量子物理学理论中也产生了分歧，分化成为两个派别——哥本哈根诠释和多世界诠释。</p>
-<hr>
-<h2 id="哥本哈根诠释"><a href="#哥本哈根诠释" class="headerlink" title="哥本哈根诠释"></a>哥本哈根诠释</h2><p>一听名字就超屌的对不对？一听就适合说出去装逼对不对？哥本哈根诠释认为，未来有无数种可能，每一个行动都会对未来产生某种不确定的影响，但是一旦行动确实的发生了，这些不确定就会在瞬间坍缩，变成一种确定的状态，成为一个现实。没懂？简单点说，这个理论支持了我们大家最熟悉的时间旅行方式——用S&#x2F;L大法直接改变未来。<br>这一理论下的动漫代表作，是这部《穿越时空的少女》。<br>女主角绀野真琴意外的获得了回到过去的能力，她用这个伟大的能力来……解决少女日常生活中鸡毛蒜皮的问题。考试没考好，回到过去重做；走路摔跤了，回到过去花式躲闪；好朋友表白，回到过去逃走；被好朋友误会，回到过去避开。主人公懦弱又犹豫的性格，一次次消耗着时间旅行的次数，做着极其微小的改变。直到有一天发现次数耗尽再也不能回到过去，而自己却错过了来自未来的心爱男生的表白。<br>这部作品没有在时间旅行理论方面做过多的着墨，把刻画的重心放在了女主角脆弱的感情线上。在故事的最后，主角嚎啕大哭着说道：“在未来等我，马上就去，跑着去！”感动了无数观众。</p>
-<p>说起时间旅行的电影，《回到未来》三部曲是绕不过去的。《回到未来》系列拍摄于上世纪八十年代，是哥本哈根诠释的经典作品。（在《回到未来》第三部中，提到了多世界理论。）男主角乘坐时光机回到过去，改变自己的家族历史之后再回到现代，自己的家庭就从贫下中农变成了中产阶级。影片着力描述了改变过去对于未来的影响，比如说有一个桥段是主角的母亲阴差阳错的对主角产生了好感，于是主角的身体开始变得透明，全家福照片上的人物逐渐消失。而当主角母亲重新爱上主角父亲的时候，主角的身体又恢复了正常。</p>
-<p>2004年的美国电影《蝴蝶效应》也是哥本哈根诠释下的优秀电影。男主人公伊万在小的时候闯了些祸，之后就患上了偶尔失忆的毛病。在医生的建议下，他开始写日记。长大成人后，伊万发现阅读自己的日记可以让他以童年的姿态回到日记记载的时刻。于是他走上了反复修改自己人生的不归路。<br>由于电影的片名就叫《蝴蝶效应》，因此电影中一直在尝试向观众展现 “一件小事引起的巨大连锁反应。”伊万改变过去的行为确实改变了现实，但是人不是神，无法预测一切，因此永远会有意想不到的意外发生。伊万改变过去的所作所为无法让所有人幸福。所以结局……导演制作了三种结局，这里我就不剧透了，感兴趣的观众们自己欣赏吧。</p>
-<p>游戏方面，2016年登录steam平台的游戏《量子破碎》是由开发《马克思佩恩》的厂商Remedy Entertainment制作的一款射击类游戏。与其他射击游戏不同的是，《量子破碎》中的人物学会了操控时间的能力，所以玩家可以控制游戏角色暂停时间、瞬间移动或者让时间倒流。玩家可以用这些能力攻击敌人、解谜冒险。游戏在每个章节的结尾，都可以由玩家选择剧情的走向。<br>由于游戏中的关键人物都有操控时间的能力，因此在玩家作出选择的时候，可以直观的看到自己的选择会对世界造成什么样的影响，而不是像其他游戏那样，只有等剧情发生之后才能看到。画外音：射击游戏要什么剧情？（大误）</p>
-<p>需要说明的是，哥本哈根诠释中是存在“外祖母悖论”问题的。而根据前沿学者们的研究，现今的理论界对于哥本哈根诠释中的“外祖母悖论”解决方案是这样：“违反逻辑的行为无法发生。”换言之，就是总会有神秘力量会阻止你回到过去杀死自己的外祖母。<br>这一条“补丁”与“宿命论”的区别在于：“宿命论”中，每一个行为都是确定且无法改变的，小刘既无法阻止父母结婚，也无法阻止老王与翠花结婚，甚至连石头的轨迹都无法改变。而哥本哈根诠释中的这条“补丁”只是限定了时间旅行中违反逻辑的行为不可能发生。小刘无法阻止老刘与如花结婚，但是他可以阻止老王与翠花结婚。因为老王与翠花结婚并不会影响小刘时间旅行的行为。当然了，在影视动漫作品中，一般不需要这么严谨，因此，大部分的作品都想方设法回避了“外祖母悖论”的问题。就像《回到未来》第一部中，主角的母亲在亲吻主角之后，突然说了一句：“我怎么感觉亲的是自己的弟弟。”然后直接抛弃了主角，并爱上主角的父亲。</p>
-<hr>
-<h2 id="多世界诠释"><a href="#多世界诠释" class="headerlink" title="多世界诠释"></a>多世界诠释</h2><p>多世界诠释，也有人称为平行世界理论。与哥本哈根诠释不同，多世界诠释对未来世界的描述则要更为大胆奔放。<br>多世界诠释同样认为未来是有无数种可能的，但是它认为，当某一个不确定行为发生的时候，这个行为的不同会让世界分裂成为若干个平行世界，平行世界互相独立且同时存在。根据这个理论，改变过去是可以影响未来的，但是它只是让你进入了另一个平行世界而不是原来的世界。<br>是不是听着又晕了？我们回到之前的小故事，做一个比较。<br>假设小刘回到过去，阻止了“飞来横石”,并且成功让老刘向翠花表白，最终两人结婚。在哥本哈根诠释中，由于小刘的父母老刘和如花没有结婚，因此回到小刘的时代，小刘就不会出生了，所以小刘最终会消失（这里陷入了外祖母悖论）。<br>而在多世界诠释中，“石头”向老刘飞来的一瞬间，世界就分裂成为了两个平行世界，一个是石头击中老刘的世界，另一个是石头没有击中老刘的世界。前文所提到的老刘晕或不晕、老王约或不约翠花、老刘与如花结婚或不结婚，这里的每一种可能性，都会分裂出若干个平行世界。如果小刘回到过去，阻止了“飞来横石”，那么他就进入了石头没有击中老刘的世界里，但是石头击中老刘的世界也依然存在，小刘只是从一个平行世界来到了另一个平行世界，因此小刘不会消失（多世界诠释中不会有外祖母悖论）。</p>
-<p>一说起平行世界，许多动漫迷们都会喊出这一句台词：“一切都是命运石之门的选择。”《命运石之门》是一款日式AVG游戏，后被改编成动漫，两者主线剧情基本相同。<br>身为中二青年的男主角冈部伦太郎意外的发明了时间机器，在使用时间机器的过程中，身边的一切都逐渐失控，于是主角开始一步一步的回到过去，企图修正自己使用时间机器造成的错误。在《命运石之门》这部作品里，有时间主线的概念。在同一条时间主线上，每一个平行世界中，人物的经历虽然在细节上有所不同，但是他们命运的大方向是不变的。主角冈部不停的回到过去，只有努力来到对抗命运的另一条时间主线，才能救赎所有人。<br>《命运石之门》的故事设定很扎实，因此在硬科幻方面不输给许多优秀的影视作品。由于是讲述平行世界的故事，游戏中的多个结局也让许多《命运石之门》的爱好者们一直津津乐道。</p>
-<p>2014年电影《彗星来那一夜》则是多世界诠释电影方面的代表作品。<br>一个月黑风高的夜晚，美丽的彗星划过天际。除了美景，彗星也给人们开了一个不大玩笑：在这个夜晚，所有平行世界之间的隔阂消除了，人们可以在不经意间走进其他的平行世界。于是，混乱开始了……<br>这部电影在拍摄时使用了特殊的方式，导演一共拍了五个晚上，每一天，每一个演员都会拿到一张便笺纸，上面列了他们当晚要做的事，和一些情景条件和行动目标。每个演员都不知道其他演员要做什么，他们对即将发生的碰撞、断电和意外状况都毫不知情。因此本部影片对于平行世界的表现非常到位。影片的结构也非常独特，影片看似混乱的闲聊、镜头切换、物品特写，都暗藏着各种各样的线索，科幻水准非常高。</p>
-<p>游戏方面则是获得各方好评且获奖无数的强大作品《生化奇兵：无限》。<br>游戏使用了多世界诠释的设定，却融入了宿命论的元素。多个平行世界相互独立，却又互相影响。主角伯克不停的穿越时空尝试改变世界，却发现大BOSS康姆斯托克就是伯克自己。最终，伯克迷失在自己的命运里。<br>游戏的战斗方面设计并不十分出彩，平衡性一般，但是在剧情和气氛烘托方面给人非常多的惊喜。美轮美奂的天空城，阴暗诡异的海底城，主角对命运的思考、抗争以及无奈，都紧紧抓住了玩家的心。蒸汽朋克风格下厚重的巨型机械配合卡通渲染的绚丽画风，与游戏奇妙阴暗的剧情交织在一起，诞生出强烈的诡异感，让人有一种欣赏艺术品的错觉。游戏中还融入了大量的宗教、科幻、政治元素，各种隐喻也比比皆是，内涵方面可以深挖的内容非常多。</p>
-<hr>
-<h2 id="一切都只是假设"><a href="#一切都只是假设" class="headerlink" title="一切都只是假设"></a>一切都只是假设</h2><p>最后再次声明，本文中涉及的所有理论，目前科学界也没有人能够证明谁对谁错。至于时间旅行真正的样子，还是等时光机器发明出来再说吧。大树我可是要赶快让人帮我带话到1997年去了，毕竟那时候在北京买了几套房子的人现在都是千万富翁了呢。</p>
-<p>最后，附一张电影单给感兴趣的朋友们。<br>宿命论：《时空罪恶》、《定时拍摄》、《时空旅行者的妻子》、《星际穿越》；<br>哥本哈根诠释：《鬼打墙》、《环形使者》、《明日边缘》、《土拨鼠日》、《时空恋旅人》；<br>多世界诠释：《平行宇宙》、《救世主》、《无姓之人》。 </p>
-<hr>
-<p>注：本文是本人2016年发表于网易爱玩的一篇旧文。<br><a target="_blank" rel="noopener" href="http://play.163.com/16/1119/21/C690JSGO00314V8J.html">http://play.163.com/16/1119/21/C690JSGO00314V8J.html</a></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-26T06:14:25.000Z" title="2023/3/26 14:14:25">2023-03-26</time>发表</span><span class="level-item"><time dateTime="2023-03-26T17:44:56.344Z" title="2023/3/27 01:44:56">2023-03-27</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></span><span class="level-item">26 分钟读完 (大约3952个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/">日渐衰落的格斗游戏</a></p><div class="content"><p>“Duang！”年纪大一点的玩家大概都记得这一记锣声，《功夫》这款游戏是许多人儿时的记忆，那个拿着棍子的光头王曾经被多少热血少年踢翻在地。</p>
-<p><strong>格斗游戏</strong>，英文简称FTG。上个世纪90年代初期，在家用机的冲击下，街机游戏市场可谓是苟延残喘。一方面，对玩家来说，街机厅的闯关类游戏玩的多了大多能找到套路，打着打着就熟练了，一开始玩通关还能在小伙伴面前炫耀一下，但总是那几关玩多了总有腻的时候。家用机流行起来以后，玩家们在家中也能享受游戏乐趣，虽然画面不如街机，但是花样多呀。<br>在另一方面，一款街机游戏的上线成本很高，游戏基板贵的要死。一个币你玩一个下午通关三回，你开心了老板可就不开心，老板不开心就想转让门面，转让了门面没人开街机厅游戏基板就只能卖的更贵，恶性循环。在这危急时刻，一款格斗游戏横空出世，让街机游戏重新焕发出了活力，就是大家熟知的惊世大作《街头霸王2》。</p>
-<p>那个时候流行的街机游戏《名将》的画面是这样，笔者小时候可是特别爱玩的。<br> <img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/%E5%90%8D%E5%B0%86.jpg" class=""></p>
-<p>而我们的救世主《街霸2》的画面是这样<br>  <img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/%E8%A1%97%E9%9C%B8.jpg" class=""></p>
-<p>人物多样、造型各异、动作威武、画面细腻、特效华丽、音效生动、细节考究，对当时的玩家来说，那叫一个震撼。而除了这些硬指标对玩家的致命吸引力之外，“与人斗其乐无穷”的快感刺激着玩家，玩家用机哪有这么多人跟你斗啊？<br>同时，这款游戏对街机厅老板来说，也同样具有诱惑力。以前玩家玩闯关游戏，不gameover你总不能赶人走啊，但是现在不同了，两人对战，终有一败，几分钟一局，这币投的，哗哗哗的呀。1991年在《GAMEST》这本街机权威杂志上，街霸2被评为当年的最佳动作游戏、最佳角色（春丽）和gamest最佳游戏。从此，玩家们为之疯狂的，格斗游戏的黄金时代降临了。</p>
-<hr>
-<p>借着玩家的这份热情，在之后的五、六年间，各种优秀的、粗糙的、奇葩的格斗游戏占据了街机厅乃至游戏市场的大半壁江山。很多大家耳熟能详的作品几乎都是在这个时候涌现出来的，街霸、拳皇、侍魂、VR战士、恶魔战士、真人快打等等等等，从街机到家用机，各种版本的格斗游戏实在太多了。当时的游戏大厂，几乎没有不做格斗游戏的。CAPCOM、Namco、TECMO、Arc System Works、SNK、Midway等厂商更是用自己的系列作品打出了一片天下。</p>
-<p>然而，在这个格斗游戏最火爆的年代，衰败的种子却已经被悄悄的种下。</p>
-<p>在最初的格斗游戏设计中，只是设计了一个个独立的动作和招式，譬如跳跃、下蹲、轻拳、重腿以及各种必杀技等等。而原本这些招式的设计，是让玩家在面对面的情形下，充分发挥各种动作招式的特点，利用一招一式对对手造成伤害，累积优势，达成胜利。但是，随着玩家的深入探索，一些出乎意料的事情发生了。有一些玩家发现，某些招式打中对手之后，可以继续接着释放另一个招式，对手无法进行防御或者反击。</p>
-<p>为什么会这样呢？众所周知，2D游戏的画面显示，是类似于电影一样的原理，看起来流畅的动作其实是一帧一帧的画面连续播放所达到的效果。因此格斗游戏的每一个动作所耗费的时间都是若干帧。而有些招式耗费的帧数小于对手被击中后硬直的帧数，于是这个招式击中对手之后，就可以接着进行其他招式的攻击。</p>
-<p>于是许多聪明的玩家开始研究什么样的招式配合什么技能在何等情况下可以达成这种高收益的效果。在研究出成果之后，这些玩家将这些成果应用于实战，结果取得了令人满意的战绩。最典型的就是《街霸2》中的古烈（美国大兵）用有节奏的连续小轻拳可以直接将对手打残。玩家给而这项技术起了个名字，叫做“目押”。</p>
-<p>结果呢，许多游戏厂商受到玩家的启发，在后来开发的游戏中，又刻意加入了一些元素，这样一来，使得格斗游戏的对战过程看起来变得更激烈更华丽。</p>
-<p>加入了哪些元素呢？</p>
-<p><strong>一、超必杀</strong><br>特定条件下可以使用的技能，可以造成巨大伤害。<br><strong>二、浮空。</strong><br>把对手打飞，当敌人在空中的时候可以继续攻击敌人。<br><strong>三、取消（cancel）。</strong><br>用某些特定动作，强制让角色从施放技能的硬直状态恢复成正常状态。<br><strong>四、大量的可以目押的技能。</strong></p>
-<p>加入这些元素之后，一项新的格斗游戏技术诞生了，一套连续的攻击下来可以对对方造成极大的伤害值，大家称这种技术为“连续技”。一般两到三套连续技下来，对手就得狗带，果然，对战过程变得异常的激烈。<br>再之后，玩家们的研究越来越深刻，发明了“硬直”、“拆解”、“立回”、“择”、“先读”、“走位”，“连携”等等格斗游戏的概念，甚至有人开始研究游戏中的角色每一个部位所占的空间究竟是多大。<br>   <img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/%E6%96%B9%E5%9D%97.png" class=""></p>
-<p>厂商们为了迎合玩家，也就针对这些概念创造了更多的游戏元素，让游戏变得“更加具有对抗性”。</p>
-<hr>
-<p>但是，问题也随之而来。</p>
-<p>上文也说了，在格斗游戏发展初期，本来是没有这么多专业概念的，大家你来我往打的不亦乐乎。当“目押”、“连续技”这种东西出现之后，情况就变得复杂起来了。本来大家每一波攻击造成的伤害差不多，现在你会目押，会连续技，你一波攻击的伤害比我攻击5波的伤害还高，那我赢的可能性就大大降低了。而你又陆续学会了“择”、“立回”、“走位”等等技术，这些技术支持下，你每一秒钟都在压制我，我想打赢你，那就变得几乎不可能了。想赢，我也得学这些技术。</p>
-<p>然而，想学会这些技术并非易事。</p>
-<p>首先，在那个年代，正常情况下，一款格斗游戏公布的资料最多也就是游戏系统和各个角色的出招表而已。而其他内容几乎全部是其他玩家摸索整理出来的。事实上，很多连续技只有特定技能在特定顺序特定时机施放才能成功，这些技能的施放顺序、时机如教科书一般死板，否则的话，很多时候即使肉眼看到打中了，也没有效果。而对于新手来说，根本不知道这些“额外课程”，连练习都不知道如何入手。</p>
-<p>另一方面，这些格斗玩家的操作技术都是以帧为时间单位实现的。以《街霸2》为例，游戏中一秒显示的画面是60帧，也就是1&#x2F;60秒是一帧。《街霸2》中桑吉尔夫的螺旋打桩机（梅花大坐），指令是：←↙↓↘→↗↑↖←+（拳），如果想要在原地不动的情况下施放这一招，至少要在6帧也就是1&#x2F;10秒之内完成操作，而这只是最基本的操作，如果类比windows系统的话大概相当于粘贴文件的操作。而在实战中，必须要顶着对手玩家的压力连续完成数个这种“基本操作”，并且每个操作都要求精确到1&#x2F;X秒，其难度可想而知。所以，即使玩家搜集到了 “额外课程”，想要学会，也是异常困难，需要及其巨量的练习，通常几百个小时的练习那都是小意思。</p>
-<p>如此一来，就开始出现了两极分化的情况。<br>一边是如痴如醉疯狂练习各种技巧的高手，在他们手中，许多操作已经化为肌肉记忆，很多情况下不需要思考也能做到自如应对。而另一边是被高手疯狂虐待毫无胜算的菜鸟，在菜鸟手中的角色，除了败还是败，几十秒输一局一个小时输一百局。而格斗游戏输赢分明，非赢即输，没有中间地带。在这种挫败感的推动下，许多玩家开始放弃格斗游戏，群众基础逐渐流失。</p>
-<hr>
-<p>时光飞逝，很快，进入了新世纪，同时有一扇大门打开了——互联网。</p>
-<p>互联网的普及，让玩家可以通过互联网交流对格斗游戏的研究，如此一来，这种研究就更加深入了。各种技能的帧数表、bug的开发、人物的体积、克制属性等等几乎所有能探索的地方都被玩家深入研究了。格斗游戏厂商呢，为了讨好这些狂热的玩家，把系统做的越来越复杂，对抗强度越来越大，而且给玩家提供各种各样的游戏资料。譬如说《铁拳》系列，几十个游戏角色，每个角色都有几十上百种技能，官方提供了所有技能的帧数表，要把这一张张表记下来一点也不比小时候背课文轻松。</p>
-<p>前面提到的桑吉尔夫到了《街霸4》里有一招极限原子弹爆杀，指令是：→↗↑↖←↙↓↘→↗↑↖←↙↓↘+（轻拳、中拳、重拳一起按），仍然是6帧输入。最丧心病狂的是《罪恶装备》系列（俗称GGXX），除了大部分游戏都有的的连击、冲刺、受身等系统以外，这个游戏还增加了如RC系统、一击必杀系统、防御槽系统等等若干系统。另外，这个游戏的每一个角色，都采用完全不同的攻击方式、操作手感，就是所谓的一人一系统。</p>
-<p>如此一来，每有新作上市的时候，高手玩家由于之前的积淀，很快就能够上手；而新手玩家上场就被高手打的鼻青脸肿，想入门却发现需要学习的东西如此之多，投入数百小时的努力换来数以帧计的提高，并且在实战中仍然被高手完虐，收获的成就感微乎其微。之前就已经建立起的高手与菜鸟之间的高墙越发变的高不可攀。新玩家越来越不愿意接受这种不能带来任何成就感的游戏类型，再加上各种优质的其他类型的游戏涌入市场，格斗游戏的颓势已经无法挽回。</p>
-<hr>
-<p>不过，显然游戏厂商们也不会坐以待毙。于是某些格斗游戏厂商在技能树上点出了奇怪的技能。譬如《生或死》系列。<br>    <img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/DOA.jpg" class=""></p>
-<p>名义上是做格斗游戏，其实以露肉为卖点，厂商TECMO彻底沦为脱裤魔。</p>
-<p>欧美厂商更为奇葩，譬如从一开始就把科技树点歪了的厂商Midway（NetherRealm的前身），开发出以卖血为主打的游戏《真人快打》系列。<br>     <img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/10.gif" class=""></p>
-<p>《真人快打》的初期作品手感奇差无比，这几年反倒开始做正统的格斗系统了，当然还是以卖血为前提。</p>
-<p>另外不得不提的就是CAPCOM，即使在格斗游戏颓势之时，CAPCOM仍然能从格斗游戏上挣得不少。《街霸》系列作为全球最强的格斗游戏IP就不说了。他开发的各种乱斗作品，譬如《卡普空对SNK》、《卡普空对漫画英雄》、《街霸X铁拳》等等，都卖的非常不错。我对卡婊的敬仰如滔滔江水……</p>
-<hr>
-<p>从1985年的格斗游戏鼻祖《功夫》到今天，已经过去30多年了。格斗游戏从崛起到红极一时，时至今日已是江河日下。</p>
-<p>“纵横江湖三十余载，杀尽仇寇奸人，败尽英雄豪杰，天下更无抗手，无可奈何，惟隐居深谷，以雕为友。 呜呼，生平求一敌手而不可得，诚寂寥难堪也。”这是金庸笔下独孤求败的墓志铭。如果说，什么样的游戏可以代表武侠精神，那就是格斗游戏。初出茅庐，闭门修炼，纵横江湖，孤独求败。在这些年的格斗游戏赛事中，老面孔的出场率高的令人发指，这些人真正的做到了孤独求败。</p>
-<img src="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/%E6%A2%85%E5%8E%9F%E5%A4%A7%E5%90%BE.jpg" class="">
-<p>对我说的就是梅原大吾。</p>
-<p>然而对普通玩家来说，这份孤独求败的荣誉只是一种永远触不可及的虚幻，丧失了群众基础的格斗游戏也就不可避免的，走向衰落了。</p>
-<hr>
-<p>注：本文是本人2016年发表于网易爱玩的一篇旧文。<br><a target="_blank" rel="noopener" href="http://play.163.com/16/0608/12/BP1P3OS400314V8J.html">http://play.163.com/16/0608/12/BP1P3OS400314V8J.html</a></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-25T20:30:37.000Z" title="2023/3/26 04:30:37">2023-03-26</time>发表</span><span class="level-item"><time dateTime="2023-03-26T07:35:28.643Z" title="2023/3/26 15:35:28">2023-03-26</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">游戏理论</a></span><span class="level-item">6 分钟读完 (大约907个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/26/%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E7%B1%BB/">游戏玩家分类</a></p><div class="content"><h2 id="1-巴图分类"><a href="#1-巴图分类" class="headerlink" title="1.巴图分类"></a>1.巴图分类</h2><p>巴图分类是由美国心理学家马克·巴图提出的，被广泛应用于游戏分析领域，把游戏分为四类：挑战性，取得进步，社交性和代入感。论文中把玩家的行为划分成了四种类型：探险者、社交者、杀戮者、成就者。探险者是那些喜欢探索游戏世界的玩家，他们喜欢发现新的地方和新的事物。社交者是那些喜欢与其他玩家交流的玩家，他们喜欢与其他玩家建立联系。杀戮者是那些喜欢与其他玩家战斗的玩家，他们喜欢与其他玩家竞争。成就者是那些喜欢完成游戏目标的玩家，他们喜欢完成任务和获得成就。</p>
-<p>巴图理论虽然已经成为游戏分析的主流，但也存在一些不足，如缺乏具体性，无法提供游戏开发者具体的分析结果，也无法解决游戏开发中的核心问题。</p>
-<h2 id="2-Josh-Bycer"><a href="#2-Josh-Bycer" class="headerlink" title="2.Josh Bycer"></a>2.Josh Bycer</h2><p> 为了解决巴图理论的不足，著名的游戏分析师Josh Bycer将游戏玩家分为四种类型：休闲玩家、主流玩家、高端玩家和硬核玩家。休闲玩家是那些只是想放松的玩家，他们不太关心游戏的深度和难度。主流玩家是那些喜欢流行游戏的玩家，他们喜欢玩那些大众化的游戏。高端玩家是那些喜欢挑战的玩家，他们喜欢那些难度较高的游戏。硬核玩家是那些喜欢极限挑战的玩家，他们喜欢那些极难的游戏。<br>此外，还有一些其他的玩家分类法，例如，Nick Yee的游戏人口学，以及Anders Drachen等人的游戏玩家分类法。</p>
-<h2 id="3-Nick-yee"><a href="#3-Nick-yee" class="headerlink" title="3.Nick yee"></a>3.Nick yee</h2><p>Nick Yee是一位研究虚拟环境中自我表现和社交互动的美国研究员。他在斯坦福大学获得了通信博士学位，并在游戏人口学领域做出了重要贡献。他的研究主要关注于虚拟环境中的人口统计学、动机和衍生经验。他的研究成果包括游戏动机调查，以及Quantic Foundry Apps等。他提出了因素分析法，该法从游戏的不同方面，如成就因素、社交因素和代入感因素，来进行更加细致的游戏分析。 成就因素是游戏中最重要的因素，它主要包括取得进步（包括解锁新关卡，提升技能和获得新物品等）、游戏机制（包括规则设定、鼓励行为、激励等）和竞争（包括比赛、排名等）。 社交因素包括交际（即通过聊天、视频等方式与他人交流）、关系（与他人建立友谊）和团队协作（协助他人）。 代入感因素是游戏中最为重要的因素，它包括探索（探索游戏世界）、角色扮演（把自己扮演成游戏中的角色）、个性化（自定义游戏角色和背景）和逃避现实（通过游戏暂时避开现实世界的压力）。</p>
-<p><strong><mark><a target="_blank" rel="noopener" href="http://www.360doc.com/content/12/0121/07/658_1111249.shtml">动机理论</a></mark></strong></p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-22T17:26:38.000Z" title="2023/3/23 01:26:38">2023-03-23</time>发表</span><span class="level-item"><time dateTime="2023-03-26T07:31:18.371Z" title="2023/3/26 15:31:18">2023-03-26</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/test/">test</a></span><span class="level-item">几秒读完 (大约0个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/23/xiaoshushu-s-no-1-blog/">xiaoshushu&#039;s no.1 blog</a></p><div class="content"></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-22T16:43:00.928Z" title="2023/3/23 00:43:00">2023-03-23</time>发表</span><span class="level-item"><time dateTime="2023-03-22T16:43:00.928Z" title="2023/3/23 00:43:00">2023-03-23</time>更新</span><span class="level-item">1 分钟读完 (大约123个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2023/03/23/hello-world/">Hello World</a></p><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="僵尸大树">
+  <meta name="keywords" content="游戏设计 游戏 设计 僵尸大树">
+  
+    <meta name="description" content="今天是我们余生的第一天">
+<meta property="og:type" content="website">
+<meta property="og:title" content="以鼠之见">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="以鼠之见">
+<meta property="og:description" content="今天是我们余生的第一天">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="僵尸大树">
+<meta property="article:tag" content="游戏设计 游戏 设计 僵尸大树">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>以鼠之见</title>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="僵尸大树"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">僵尸大树</p><p class="is-size-6 is-block">今天是我们余生的第一天</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/xiaoshushu1211" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiaoshushu1211"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="youtube" href="https://www.youtube.com/@shushuxiao6891/featured"><i class="fab fa-youtube"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="zhihu" href="https://www.zhihu.com/people/ghost-ghost-27"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/test/"><span class="level-start"><span class="level-item">test</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9D%82%E8%B0%88/"><span class="level-start"><span class="level-item">杂谈</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/"><span class="level-start"><span class="level-item">游戏理论</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9D%82%E8%B0%88/"><span class="tag">杂谈</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/"><span class="tag">游戏理论</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"><span class="tag">游戏设计</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-26T06:48:46.000Z">2023-03-26</time></p><p class="title"><a href="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/">让我们尽情的后悔:ACG中的时间旅行</a></p><p class="categories"><a href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-26T06:14:25.000Z">2023-03-26</time></p><p class="title"><a href="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/">日渐衰落的格斗游戏</a></p><p class="categories"><a href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-25T20:30:37.000Z">2023-03-26</time></p><p class="title"><a href="/2023/03/26/%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E7%B1%BB/">游戏玩家分类</a></p><p class="categories"><a href="/categories/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">游戏理论</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-22T17:26:38.000Z">2023-03-23</time></p><p class="title"><a href="/2023/03/23/xiaoshushu-s-no-1-blog/">xiaoshushu&#039;s no.1 blog</a></p><p class="categories"><a href="/categories/test/">test</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-22T16:43:00.928Z">2023-03-23</time></p><p class="title"><a href="/2023/03/23/hello-world/">Hello World</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="以鼠之见" height="28"></a><p class="is-size-7"><span>&copy; 2023 僵尸大树</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>以鼠之见</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.5)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">僵尸大树の游戏设计笔记</span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/" target="_self">
+          让我们尽情的后悔:ACG中的时间旅行
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/26/ACG%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E6%97%85%E8%A1%8C/" target="_self">
+        <div>
+          几年前论坛还很流行的时候，有人发了一篇帖子，题目是《我要回到1997年了，真是舍不得你们》，帖子大致的内容是说：自己从十年前穿越而来，马上就要回到过去了，问大家有没有什么话想带给过去的自己。这样一篇明显是网友开玩笑的帖子，居然有几万条回复，点击量好几百万。很多人都表示，原本就是想个凑热闹回个帖，最后却纷纷泪流满面。为什么这样的帖子会引起大家的共鸣？理由很简单，我们的生活中总是充满这样那样的遗憾，这
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-26 14:48" pubdate>
+              2023-03-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E8%B0%88/" class="category-chain-item">杂谈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9D%82%E8%B0%88/">#杂谈</a>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">#游戏理论</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/" target="_self">
+          日渐衰落的格斗游戏
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/26/%E6%97%A5%E6%B8%90%E8%A1%B0%E8%90%BD%E7%9A%84%E6%A0%BC%E6%96%97%E6%B8%B8%E6%88%8F/" target="_self">
+        <div>
+          “Duang！”年纪大一点的玩家大概都记得这一记锣声，《功夫》这款游戏是许多人儿时的记忆，那个拿着棍子的光头王曾经被多少热血少年踢翻在地。 格斗游戏，英文简称FTG。上个世纪90年代初期，在家用机的冲击下，街机游戏市场可谓是苟延残喘。一方面，对玩家来说，街机厅的闯关类游戏玩的多了大多能找到套路，打着打着就熟练了，一开始玩通关还能在小伙伴面前炫耀一下，但总是那几关玩多了总有腻的时候。家用机流行起来以
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-26 14:14" pubdate>
+              2023-03-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E8%B0%88/" class="category-chain-item">杂谈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9D%82%E8%B0%88/">#杂谈</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/26/%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E7%B1%BB/" target="_self">
+          游戏玩家分类
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/26/%E6%B8%B8%E6%88%8F%E7%8E%A9%E5%AE%B6%E5%88%86%E7%B1%BB/" target="_self">
+        <div>
+          1.巴图分类巴图分类是由美国心理学家马克·巴图提出的，被广泛应用于游戏分析领域，把游戏分为四类：挑战性，取得进步，社交性和代入感。论文中把玩家的行为划分成了四种类型：探险者、社交者、杀戮者、成就者。探险者是那些喜欢探索游戏世界的玩家，他们喜欢发现新的地方和新的事物。社交者是那些喜欢与其他玩家交流的玩家，他们喜欢与其他玩家建立联系。杀戮者是那些喜欢与其他玩家战斗的玩家，他们喜欢与其他玩家竞争。成就者
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-26 04:30" pubdate>
+              2023-03-26
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/" class="category-chain-item">游戏理论</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E7%90%86%E8%AE%BA/">#游戏理论</a>
+            
+              <a href="/tags/test/">#test</a>
+            
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/">#游戏设计</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/23/xiaoshushu-s-no-1-blog/" target="_self">
+          xiaoshushu&#39;s no.1 blog
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/23/xiaoshushu-s-no-1-blog/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-23 01:26" pubdate>
+              2023-03-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/test/" class="category-chain-item">test</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/test/">#test</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/23/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/03/23/hello-world/" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-23 00:43" pubdate>
+              2023-03-23
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
