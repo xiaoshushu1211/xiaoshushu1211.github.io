@@ -4,9 +4,10 @@ date: 2016-03-26 14:48:46
 tags: 
 - 杂谈 
 - 游戏理论
+- Essay
+- Game theory
 categories:
 - 杂谈
-
 ---
 
 

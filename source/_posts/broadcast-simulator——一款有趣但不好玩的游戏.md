@@ -1,7 +1,9 @@
 ---
 title: broadcast simulator——一款有趣但不好玩的游戏
 date: 2023-03-30 23:42:38
-tags: 评测
+tags: 
+- 评测
+- Review
 categories: 评测
 ---
 

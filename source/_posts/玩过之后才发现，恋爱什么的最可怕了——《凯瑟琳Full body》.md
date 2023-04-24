@@ -1,9 +1,14 @@
 ---
 title: 玩过之后才发现，恋爱什么的最可怕了——《凯瑟琳Full body》
 date: 2021-11-11 01:12:05
-tags: 评测
+tags: 
+- 评测
+- Review
 categories: 评测
 ---
+
+本文是2021年光棍节给腾讯Nintendo Switch事业部的一篇撰稿，发表于腾讯鹅宝公众号。
+https://mp.weixin.qq.com/s/6_ZH7vcKSmByeUClCZRPxw
 
 剧透提醒：本文有中度剧透，希望拥有完美游戏体验的玩家请谨慎阅读。
 
@@ -134,5 +139,3 @@ full body（重酒体）的口感类似于全脂牛奶，通常更为厚重和�
 游戏中出现了50多条与婚姻爱情人生有关的名言，这里姑且引用游戏中的一句话作为结语：“不管结婚不结婚你都会后悔——苏格拉底”。
 
  
-本文是2021年光棍节给腾讯Nintendo Switch事业部的一篇撰稿，发表于公众号。
-https://mp.weixin.qq.com/s/6_ZH7vcKSmByeUClCZRPxw
